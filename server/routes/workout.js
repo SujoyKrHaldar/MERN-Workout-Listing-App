@@ -3,7 +3,7 @@ const workout = require("../controllers/workout");
 
 const route = express.Router();
 
-route.get("/", workout.getALlData);
+route.get("/", workout.getAllData);
 route.get("/:id", workout.getOneData);
 route.post("/", workout.postData);
 route.patch("/:id", workout.updateData);
