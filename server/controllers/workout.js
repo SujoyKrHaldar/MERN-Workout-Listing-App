@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const workout = {
   getAllData: async (req, res) => {
     const data = await WorkoutSchema.find({}).sort({ createdAt: -1 });
-    if (data.length === 0) {
-      return res.status(404).json({ message: "No data." });
-    }
+    // if (data.length === 0) {
+    //   return res.status(404).json({ message: "No data." });
+    // }
     res.status(200).json(data);
   },
 

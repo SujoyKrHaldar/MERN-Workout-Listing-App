@@ -20,7 +20,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: overlay;
 }
 
 img {
@@ -44,5 +43,5 @@ p {
 }
 
 a.active {
-  background-color: white;
+  background-color: #e8e8e8;
 }
