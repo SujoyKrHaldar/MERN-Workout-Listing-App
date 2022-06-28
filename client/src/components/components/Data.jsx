@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import WorkoutCard from "../design/card/WorkoutCard";
+import WorkoutForm from "../design/form/WorkoutForm";
 import Loading from "../design/others/Loading";
 
 function Home() {
@@ -32,30 +33,35 @@ function Home() {
   return (
     <>
       <div className="bg-[#f2f2f2] border-[1rem] border-white w-full min-h-[93vh] h-auto">
-        <div className="container w-full h-full  py-28  ">
-          {error ? (
-            <h1 className="text-2xl mb-4 font-bold">Failed to Fetch data.</h1>
-          ) : (
-            <>
-              {data.length > 0 ? (
-                <h1 className="text-2xl mb-4">
-                  All <span className="font-bold">Workouts</span>
-                </h1>
-              ) : (
-                <h1 className="text-2xl font-bold mb-4">No Workouts</h1>
-              )}
-              {Load && <Loading />}
-              {data.length > 0 && (
-                <>
-                  <div className="grid grid-cols-3 gap-4 mt-4">
-                    {data.map((d) => (
-                      <WorkoutCard key={d._id} data={d} />
-                    ))}
-                  </div>
-                </>
-              )}
-            </>
-          )}
+        <div className="container w-full h-full py-28 flex items-start justify-between gap-8">
+          <div className="flex-1">
+            {error ? (
+              <h1 className="text-2xl mb-4 font-bold">Failed to Fetch data.</h1>
+            ) : (
+              <>
+                {data && data.length > 0 ? (
+                  <h1 className="text-2xl mb-4">
+                    All <span className="font-bold">Workouts</span>
+                  </h1>
+                ) : (
+                  <h1 className="text-2xl font-bold mb-4">No Workouts</h1>
+                )}
+                {Load && <Loading />}
+                {data.length > 0 && (
+                  <>
+                    <div className="mt-4">
+                      {data.map((d) => (
+                        <WorkoutCard key={d._id} data={d} />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+          </div>
+          <div className="flex-1">
+            <WorkoutForm />
+          </div>
         </div>
       </div>
     </>

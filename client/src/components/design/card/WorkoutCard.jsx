@@ -2,7 +2,7 @@ function WorkoutCard({ data }) {
   return (
     <>
       <div
-        className="group p-6 bg-white border-2  hover:border-green-500 
+        className="group p-6 bg-white  mb-4 last:mb-0 
       shadow-sm hover:shadow-lg "
       >
         <h2 className="text-xl text-black group-hover:text-green-500 font-bold mb-3">

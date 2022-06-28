@@ -30,7 +30,7 @@ const workout = {
   postData: async (req, res) => {
     try {
       const newData = await WorkoutSchema.create(req.body);
-      res.status(201).json({ message: "Entry created.", newData });
+      res.status(201).json({ message: "Entry created." });
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
